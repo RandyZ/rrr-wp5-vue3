@@ -1,0 +1,31 @@
+{
+  "name": "randy-wp5-vue3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack serve"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.20.2",
+    "@babel/preset-env": "^7.20.2",
+    "autoprefixer": "^10.4.13",
+    "babel-loader": "^9.1.0",
+    "css-loader": "^6.7.2",
+    "css-minimizer-webpack-plugin": "^4.2.2",
+    "html-webpack-plugin": "^5.5.0",
+    "less": "^4.1.3",
+    "less-loader": "^11.1.0",
+    "mini-css-extract-plugin": "^2.6.1",
+    "postcss-loader": "^7.0.1",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.4.1",
+    "typescript": "^4.8.4",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1",
+    "webpack-merge": "^5.8.0"
+  }
+}
