@@ -124,7 +124,7 @@ module.exports = smp.wrap({
             // Vue编译
             {
                 test: /.vue$/,
-                use: 'vue-loader',
+                use: ['vue-loader'],
             },
             // 1. ts编译支持；2. js兼容支持
             {
