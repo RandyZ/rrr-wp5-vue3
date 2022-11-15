@@ -10,6 +10,8 @@ const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
 const smp = new SpeedMeasurePlugin();
 // 代码压缩
 const TerserPlugin = require('terser-webpack-plugin');
+// Vue
+const { VueLoaderPlugin } = require('vue-loader');
 // -----------------------------------------------可选项-------------------------------------------------
 
 module.exports = smp.wrap({
@@ -119,6 +121,12 @@ module.exports = smp.wrap({
                     'postcss-loader',
                 ],
             },
+            // Vue编译
+            {
+                test: /.vue$/,
+                use: 'vue-loader',
+            },
+            // 1. ts编译支持；2. js兼容支持
             {
                 test: /\.(t|j)s$/,
                 exclude: /node_modules/,
@@ -142,5 +150,6 @@ module.exports = smp.wrap({
             filename: '[name].[hash:8].css',
         }),
         new CssMinimizerWebpackPlugin(),
+        new VueLoaderPlugin(),
     ],
 });
