@@ -5,16 +5,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // CSS压缩
 const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
-// 编译速度分析
-// const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
-// const smp = new SpeedMeasurePlugin();
-// smp.wrap()
 // 代码压缩
 const TerserPlugin = require('terser-webpack-plugin');
 // Vue
 const { VueLoaderPlugin } = require('vue-loader');
 // -----------------------------------------------可选项-------------------------------------------------
-// -----------------------------------------------参数变量-------------------------------------------------
+// ----------------------------------------------参数变量-------------------------------------------------
 const DevMode = process.env.NODE_ENV !== 'production';
 console.info('Randy ENV', process.env.NODE_ENV, 'mode', DevMode);
 module.exports = {
@@ -152,10 +148,10 @@ module.exports = {
             template: './public/index.html',
             vue: 'single-spa',
         }),
+        new CssMinimizerWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: '[name].[hash:8].css',
         }),
-        new CssMinimizerWebpackPlugin(),
         new VueLoaderPlugin(),
     ],
 };
