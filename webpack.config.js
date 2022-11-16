@@ -15,7 +15,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 // -----------------------------------------------可选项-------------------------------------------------
 // -----------------------------------------------参数变量-------------------------------------------------
-const DevMode = process.env.NODE_ENV !== "production";
+const DevMode = process.env.NODE_ENV !== 'production';
 console.info('Randy ENV', process.env.NODE_ENV, 'mode', DevMode);
 module.exports = {
     mode: 'development',
@@ -31,9 +31,6 @@ module.exports = {
             '@': path.resolve(__dirname, './src'),
         },
         extensions: ['*', '.js', '.ts', '.vue', '.json'],
-    },
-    cache: {
-        type: 'filesystem', // 使用文件缓存
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -116,11 +113,18 @@ module.exports = {
             {
                 test: /\.less$/i,
                 use: [
-                    MiniCssExtractPlugin.loader,
-                    'style-loader',
+                    DevMode ? 'style-loader' : MiniCssExtractPlugin.loader,
                     'css-loader',
-                    'less-loader',
                     'postcss-loader',
+                    {
+                        loader: 'less-loader',
+                        options: {
+                            lessOptions: {
+                                javascriptEnabled: true,
+                            }
+                        },
+                    },
+                    
                 ],
             },
             // Vue编译
