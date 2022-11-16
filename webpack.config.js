@@ -109,6 +109,7 @@ module.exports = {
             {
                 test: /\.less$/i,
                 use: [
+                    // less-loader-> postcss-loader -> css-loader，按照这个顺序执行，解决less特殊语法渗透到后续loader中
                     DevMode ? 'style-loader' : MiniCssExtractPlugin.loader,
                     'css-loader',
                     'postcss-loader',
