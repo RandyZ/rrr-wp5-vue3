@@ -6,15 +6,18 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // CSS压缩
 const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 // 编译速度分析
-const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
-const smp = new SpeedMeasurePlugin();
+// const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
+// const smp = new SpeedMeasurePlugin();
+// smp.wrap()
 // 代码压缩
 const TerserPlugin = require('terser-webpack-plugin');
 // Vue
 const { VueLoaderPlugin } = require('vue-loader');
 // -----------------------------------------------可选项-------------------------------------------------
-
-module.exports = smp.wrap({
+// -----------------------------------------------参数变量-------------------------------------------------
+const DevMode = process.env.NODE_ENV !== "production";
+console.info('Randy ENV', process.env.NODE_ENV, 'mode', DevMode);
+module.exports = {
     mode: 'development',
     entry: './src/main.ts',
     devtool: 'inline-source-map',
@@ -98,10 +101,9 @@ module.exports = smp.wrap({
             },
             // 配置样式文件
             {
-                test: /\.css$/,
+                test: /\.css$/i,
                 use: [
-                    MiniCssExtractPlugin.loader,
-                    'style-loader',
+                    DevMode ? 'style-loader' : MiniCssExtractPlugin.loader,
                     'css-loader',
                     'postcss-loader',
                     // 多进程编译
@@ -152,4 +154,4 @@ module.exports = smp.wrap({
         new CssMinimizerWebpackPlugin(),
         new VueLoaderPlugin(),
     ],
-});
+};
