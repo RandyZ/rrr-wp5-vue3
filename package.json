@@ -6,10 +6,10 @@
   "scripts": {
     "clean": "rimraf ./dist && mkdir dist",
     "prebuild": "yarn clean",
-    "dev": "cross-env NODE_ENV=development webpack serve --config ./webpack.config.js",
+    "dev": "cross-env NODE_ENV=test webpack serve --config ./webpack.config.js",
     "dev:prod": "cross-env NODE_ENV=production webpack serve --config ./webpack.config.js",
     "build": "cross-env NODE_ENV=production webpack --progress --config ./webpack.config.js",
-    "build:dev": "cross-env NODE_ENV=development webpack --progress --config ./webpack.config.js",
+    "build:test": "cross-env NODE_ENV=test webpack --progress --config ./webpack.config.js",
     "check-types": "tsc --watch"
   },
   "author": "",
@@ -33,6 +33,8 @@
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.2",
     "css-minimizer-webpack-plugin": "^4.2.2",
+    "dotenv": "^16.0.3",
+    "fs-extra": "^10.1.0",
     "html-webpack-plugin": "^5.5.0",
     "jsxobj": "^1.1.0",
     "less": "^4.1.3",

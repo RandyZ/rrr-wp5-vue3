@@ -3,9 +3,9 @@
 2. 搭建Webpack5和Vue3的功能
 3. 增加Typescript编译实现
 4. 引入`ant-design-vue` 3.x的UI组件库，支持antdv的Less模式
+5. 引入`dotenv`，实现多环境管理
 
 # 待完成工作
-1. 引入`dotenv`
 1. 整理Webpack脚本的配置，通过`webpack-merge`
 2. 创建两个分支，加入Vuex/Pinia
 3. 引入`vue-router`
