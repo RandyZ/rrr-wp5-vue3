@@ -9,9 +9,12 @@ const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 // Vue
 const { VueLoaderPlugin } = require('vue-loader');
+// Webpack插件
+const { DefinePlugin } = require('webpack')
 // -----------------------------------------------可选项-------------------------------------------------
 // ----------------------------------------------参数变量-------------------------------------------------
-const DevMode = process.env.NODE_ENV !== 'production';
+const NodeEnv = process.env.NODE_ENV;
+const DevMode = NodeEnv !== 'production';
 console.info('Randy ENV', process.env.NODE_ENV, 'mode', DevMode);
 module.exports = {
     mode: 'development',
@@ -35,6 +38,7 @@ module.exports = {
     },
     // 优化编译
     optimization: {
+        nodeEnv: false,
         runtimeChunk: true,
         moduleIds: 'deterministic',
         minimizer: [
@@ -118,10 +122,9 @@ module.exports = {
                         options: {
                             lessOptions: {
                                 javascriptEnabled: true,
-                            }
+                            },
                         },
                     },
-                    
                 ],
             },
             // Vue编译
@@ -154,5 +157,8 @@ module.exports = {
             filename: '[name].[hash:8].css',
         }),
         new VueLoaderPlugin(),
+        new DefinePlugin({
+            'process.env': { ...require('./env').loadEnv(NodeEnv) }
+        }),
     ],
 };
