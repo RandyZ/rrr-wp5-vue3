@@ -10,7 +10,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 // Vue
 const { VueLoaderPlugin } = require('vue-loader');
 // Webpack插件
-const { DefinePlugin } = require('webpack')
+const { DefinePlugin } = require('webpack');
 // -----------------------------------------------可选项-------------------------------------------------
 // ----------------------------------------------参数变量-------------------------------------------------
 const NodeEnv = process.env.NODE_ENV;
@@ -158,7 +158,7 @@ module.exports = {
         }),
         new VueLoaderPlugin(),
         new DefinePlugin({
-            'process.env': { ...require('./env').loadEnv(NodeEnv) }
+            'process.env': { ...require('./env').loadEnv(NodeEnv) },
         }),
     ],
 };

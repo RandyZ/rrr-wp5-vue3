@@ -6,8 +6,8 @@
 5. 引入`dotenv`，实现多环境管理
 
 # 待完成工作
-1. 整理Webpack脚本的配置，通过`webpack-merge`
 2. 创建两个分支，加入Vuex/Pinia
 3. 引入`vue-router`
+3. EsLint、StyleLint、Editorconfig
 4. 引入`micro-app`，创建基座模版和子应用模版
 5. 了解vue3的`npm init vue@latest`的机制，自定义`npm init`
