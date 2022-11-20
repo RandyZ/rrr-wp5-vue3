@@ -1102,6 +1102,11 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@one-ini/wasm@0.1.1":
+  version "0.1.1"
+  resolved "https://nexus.wmqhealth.com/repository/npm-proxy/@one-ini/wasm/-/wasm-0.1.1.tgz#6013659736c9dbfccc96e8a9c2b3de317df39323"
+  integrity sha512-XuySG1E38YScSJoMlqovLru4KTUNSjgVTIjyh7qMX6aNN5HY5Ct5LhRJdxO79JtTzKfzV/bnWpz+zquYrISsvw==
+
 "@simonwep/pickr@~1.8.0":
   version "1.8.2"
   resolved "https://nexus.wmqhealth.com/repository/npm-proxy/@simonwep/pickr/-/pickr-1.8.2.tgz"
@@ -2502,6 +2507,13 @@ brace-expansion@^1.1.7:
     balanced-match "^1.0.0"
     concat-map "0.0.1"
 
+brace-expansion@^2.0.1:
+  version "2.0.1"
+  resolved "https://nexus.wmqhealth.com/repository/npm-proxy/brace-expansion/-/brace-expansion-2.0.1.tgz#1edc459e0f0c548486ecf9fc99f2221364b9a0ae"
+  integrity sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA==
+  dependencies:
+    balanced-match "^1.0.0"
+
 braces@^3.0.2, braces@~3.0.2:
   version "3.0.2"
   resolved "https://nexus.wmqhealth.com/repository/npm-proxy/braces/-/braces-3.0.2.tgz"
@@ -2715,6 +2727,11 @@ commander@^8.3.0:
   version "8.3.0"
   resolved "https://nexus.wmqhealth.com/repository/npm-proxy/commander/-/commander-8.3.0.tgz"
   integrity sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==
+
+commander@^9.4.1:
+  version "9.4.1"
+  resolved "https://nexus.wmqhealth.com/repository/npm-proxy/commander/-/commander-9.4.1.tgz#d1dd8f2ce6faf93147295c0df13c7c21141cfbdd"
+  integrity sha512-5EEkTNyHNGFPD2H+c/dXXfQZYa/scCKasxWcXJaWnNJ99pnQN9Vnmqow+p+PlFPE63Q6mThaZws1T+HxfpgtPw==
 
 commondir@^1.0.1:
   version "1.0.1"
@@ -3141,6 +3158,16 @@ dotenv@^16.0.3:
   resolved "https://nexus.wmqhealth.com/repository/npm-proxy/dotenv/-/dotenv-16.0.3.tgz"
   integrity sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==
 
+editorconfig@^1.0.1:
+  version "1.0.1"
+  resolved "https://nexus.wmqhealth.com/repository/npm-proxy/editorconfig/-/editorconfig-1.0.1.tgz#94dee9bf4351ccce3b12eefed663efef29b06046"
+  integrity sha512-QKhz+SCEjJ6JpIK4Ve64KpSZs8ZIoIkd2qWbhfrVrwbIh60+uVV70QDh3FYcZrhwJwQ+m9UdrOMSbGe/Osxiew==
+  dependencies:
+    "@one-ini/wasm" "0.1.1"
+    commander "^9.4.1"
+    minimatch "5.1.0"
+    semver "^7.3.8"
+
 ee-first@1.1.1:
   version "1.1.1"
   resolved "https://nexus.wmqhealth.com/repository/npm-proxy/ee-first/-/ee-first-1.1.1.tgz"
@@ -3264,6 +3291,11 @@ escape-string-regexp@^4.0.0:
   resolved "https://nexus.wmqhealth.com/repository/npm-proxy/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz"
   integrity sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==
 
+eslint-config-prettier@^8.5.0:
+  version "8.5.0"
+  resolved "https://nexus.wmqhealth.com/repository/npm-proxy/eslint-config-prettier/-/eslint-config-prettier-8.5.0.tgz#5a81680ec934beca02c7b1a61cf8ca34b66feab1"
+  integrity sha512-obmWKLUNCnhtQRKc+tmnYuQl0pFU1ibYJQ5BGhTVB08bHe9wC8qUeG7c08dj9XX+AuPj1YSGSQIHl1pnDHZR0Q==
+
 eslint-config-standard@^17.0.0:
   version "17.0.0"
   resolved "https://nexus.wmqhealth.com/repository/npm-proxy/eslint-config-standard/-/eslint-config-standard-17.0.0.tgz"
@@ -3324,6 +3356,13 @@ eslint-plugin-n@^15.5.1:
     minimatch "^3.1.2"
     resolve "^1.22.1"
     semver "^7.3.8"
+
+eslint-plugin-prettier@^4.2.1:
+  version "4.2.1"
+  resolved "https://nexus.wmqhealth.com/repository/npm-proxy/eslint-plugin-prettier/-/eslint-plugin-prettier-4.2.1.tgz#651cbb88b1dab98bfd42f017a12fa6b2d993f94b"
+  integrity sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==
+  dependencies:
+    prettier-linter-helpers "^1.0.0"
 
 eslint-plugin-promise@^6.1.1:
   version "6.1.1"
@@ -3558,6 +3597,11 @@ fast-deep-equal@^3.1.1, fast-deep-equal@^3.1.3:
   version "3.1.3"
   resolved "https://nexus.wmqhealth.com/repository/npm-proxy/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz"
   integrity sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==
+
+fast-diff@^1.1.2:
+  version "1.2.0"
+  resolved "https://nexus.wmqhealth.com/repository/npm-proxy/fast-diff/-/fast-diff-1.2.0.tgz#73ee11982d86caaf7959828d519cfe927fac5f03"
+  integrity sha512-xJuoT5+L99XlZ8twedaRf6Ax2TgQVxvgZOYoPKqZufmJib0tL2tegPBOZb1pVNgIhlqDlA0eO0c3wBvQcmzx4w==
 
 fast-glob@^3.2.9:
   version "3.2.12"
@@ -4640,6 +4684,13 @@ minimalistic-assert@^1.0.0:
   resolved "https://nexus.wmqhealth.com/repository/npm-proxy/minimalistic-assert/-/minimalistic-assert-1.0.1.tgz"
   integrity sha512-UtJcAD4yEaGtjPezWuO9wC4nwUnVH/8/Im3yEHQP4b67cXlD/Qr9hdITCU1xDbSEXg2XKNaP8jsReV7vQd00/A==
 
+minimatch@5.1.0:
+  version "5.1.0"
+  resolved "https://nexus.wmqhealth.com/repository/npm-proxy/minimatch/-/minimatch-5.1.0.tgz#1717b464f4971b144f6aabe8f2d0b8e4511e09c7"
+  integrity sha512-9TPBGGak4nHfGZsPBohm9AWg6NoT7QTCehS3BIJABslyZbzxfV78QM2Y6+i741OPZIafFAaiiEMh5OyIrJPgtg==
+  dependencies:
+    brace-expansion "^2.0.1"
+
 minimatch@^3.0.4, minimatch@^3.0.5, minimatch@^3.1.1, minimatch@^3.1.2:
   version "3.1.2"
   resolved "https://nexus.wmqhealth.com/repository/npm-proxy/minimatch/-/minimatch-3.1.2.tgz"
@@ -5255,6 +5306,18 @@ prelude-ls@^1.2.1:
   version "1.2.1"
   resolved "https://nexus.wmqhealth.com/repository/npm-proxy/prelude-ls/-/prelude-ls-1.2.1.tgz"
   integrity sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==
+
+prettier-linter-helpers@^1.0.0:
+  version "1.0.0"
+  resolved "https://nexus.wmqhealth.com/repository/npm-proxy/prettier-linter-helpers/-/prettier-linter-helpers-1.0.0.tgz#d23d41fe1375646de2d0104d3454a3008802cf7b"
+  integrity sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==
+  dependencies:
+    fast-diff "^1.1.2"
+
+prettier@^2.7.1:
+  version "2.7.1"
+  resolved "https://nexus.wmqhealth.com/repository/npm-proxy/prettier/-/prettier-2.7.1.tgz#e235806850d057f97bb08368a4f7d899f7760c64"
+  integrity sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==
 
 pretty-error@^4.0.0:
   version "4.0.0"
