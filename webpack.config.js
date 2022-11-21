@@ -1,4 +1,6 @@
 const path = require('path')
+// PKG信息
+const pkgInfo = require('./package.json')
 // 配置模板（HtmlWebpackPlugin）
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 // CSS打包分离
@@ -26,7 +28,9 @@ module.exports = {
   devServer: {
     port: 9000,
     hot: true,
-    open: false,
+    // 开发时原地路由刷新出现问题
+    historyApiFallback: { index: '/', disableDotRule: true },
+    headers: { 'Access-Control-Allow-Origin': '*' },
   },
   resolve: {
     alias: {
@@ -36,8 +40,11 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
     filename: '[name].[contenthash].js',
     clean: true,
+    chunkLoadingGlobal: `wmqJsonp_${pkgInfo.name}`,
+    globalObject: 'window',
   },
   // 优化编译
   optimization: {
@@ -46,7 +53,7 @@ module.exports = {
     moduleIds: 'deterministic',
     minimizer: [
       new TerserPlugin({
-        parallel: 4, //核心数量
+        parallel: 4, // 核心数量
         terserOptions: {
           parse: {
             ecma: 8,
@@ -153,7 +160,6 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      vue: 'single-spa',
     }),
     new CssMinimizerWebpackPlugin(),
     new MiniCssExtractPlugin({
@@ -162,6 +168,10 @@ module.exports = {
     new VueLoaderPlugin(),
     new DefinePlugin({
       'process.env': { ...require('./env').loadEnv(NodeEnv) },
+      // 是否支持OptionApi
+      __VUE_OPTIONS_API__: JSON.stringify(true),
+      // 正式环境是否支持DEVTOOLS
+      __VUE_PROD_DEVTOOLS__: JSON.stringify(false),
     }),
     new ESLintPlugin({
       fix: true /* 自动帮助修复 */,

@@ -9,5 +9,5 @@
 # 待完成工作
 1. 创建两个分支，加入Vuex/Pinia
 2. 引入`vue-router`
-3. 引入`micro-app`，创建基座模版和子应用模版
+3. 引入`micro-app`，创建基座模版和子应用模版。 [micro-app](https://micro-zoe.github.io/micro-app/)
 4. 了解vue3的`npm init vue@latest`的机制，自定义`npm init`

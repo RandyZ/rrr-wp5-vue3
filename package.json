@@ -2,7 +2,7 @@
   "name": "randy-wp5-vue3",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.ts",
   "scripts": {
     "clean": "rimraf ./dist && mkdir dist",
     "prebuild": "yarn clean",
@@ -70,6 +70,7 @@
   "dependencies": {
     "@babel/runtime": "^7.20.1",
     "@babel/runtime-corejs3": "^7.20.1",
+    "@micro-zoe/micro-app": "^0.8.10",
     "ant-design-vue": "^3.2.15",
     "core-js": "3.11.0",
     "lodash": "^4.17.21",
