@@ -1081,6 +1081,11 @@
   resolved "https://nexus.wmqhealth.com/repository/npm-proxy/@leichtgewicht/ip-codec/-/ip-codec-2.0.4.tgz"
   integrity sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==
 
+"@micro-zoe/micro-app@^0.8.10":
+  version "0.8.10"
+  resolved "https://nexus.wmqhealth.com/repository/npm-proxy/@micro-zoe/micro-app/-/micro-app-0.8.10.tgz#33fc5e821289521d8339cb35aa47a20786e01aea"
+  integrity sha512-Zb1G5UrOAEHhiAlanzHJiBlRFHMd4+C/Q5jkwTM991R7blb1F6uGY47pmcunzHns48Kj6k9v2+CLsozGyhQmyw==
+
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://nexus.wmqhealth.com/repository/npm-proxy/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz"
@@ -1251,12 +1256,7 @@
   resolved "https://nexus.wmqhealth.com/repository/npm-proxy/@types/mime/-/mime-3.0.1.tgz"
   integrity sha512-Y4XFY5VJAuw0FgAqPNd6NNoV44jbq9Bz2L7Rh/J6jLTiHBSBJa9fxqQIvkIld4GsoDOcCbvzOUAbLPsSKKg+uA==
 
-"@types/node@*":
-  version "18.11.9"
-  resolved "https://nexus.wmqhealth.com/repository/npm-proxy/@types/node/-/node-18.11.9.tgz"
-  integrity sha512-CRpX21/kGdzjOpFsZSkcrXMGIBWMGNIHXXBVFSH+ggkftxg+XYP20TESbh+zFvFj3EQOl5byk0HTRn1IL6hbqg==
-
-"@types/node@^18.11.9":
+"@types/node@*", "@types/node@^18.11.9":
   version "18.11.9"
   resolved "https://nexus.wmqhealth.com/repository/npm-proxy/@types/node/-/node-18.11.9.tgz#02d013de7058cea16d36168ef2fc653464cfbad4"
   integrity sha512-CRpX21/kGdzjOpFsZSkcrXMGIBWMGNIHXXBVFSH+ggkftxg+XYP20TESbh+zFvFj3EQOl5byk0HTRn1IL6hbqg==

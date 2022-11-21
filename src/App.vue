@@ -8,6 +8,7 @@
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/vue3">Vue3</RouterLink>
         <Button>Ant-Design-Button</Button>
       </nav>
     </div>

@@ -35,5 +35,6 @@ module.exports = {
     'no-empty': 2, // 不允许空的块语句
     'no-func-assign': 2, // 不允许为一个函数赋值。
     'prettier/prettier': 'off',
+    'space-before-function-paren': 'off'
   },
 }
