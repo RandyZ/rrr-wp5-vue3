@@ -2,10 +2,35 @@ import type { BaseAppContext } from './typeings'
 import type { lifeCyclesType } from '@micro-app/types'
 
 /**
- * setup函数，根据VUE_APP_MICRO_SWITCH配置决定如何启用微前端能力
+ * 执行渲染
+ * @param appContext 应用上下文
  */
-export default (appContext: BaseAppContext<any>) => {
-  if (process.env.VUE_APP_MICRO_SWITCH === 'BASE') {
+const renderNow = (appContext: BaseAppContext<any>) => {
+  // 子应用模式
+  if (window.__MICRO_APP_ENVIRONMENT__) {
+    // 微前端模式等待基座应用渲染
+    window[`micro-app-${window.__MICRO_APP_NAME__}` as any] = {
+      mount: appContext.mount,
+      unmount: appContext.unmount,
+    } as any
+  } else {
+    // 非微前端环境直接渲染
+    appContext.mount(appContext)
+  }
+}
+
+/**
+ * setup函数，根据VUE_APP_MICRO_SWITCH配置决定如何启用微前端能力
+ * @param appContext 应用上下文
+ */
+const microRender = (appContext: BaseAppContext<any>) => {
+  if (process.env.VUE_APP_MICRO_SWITCH === 'CHILD') {
+    renderNow(appContext)
+    console.debug(`【${window.__MICRO_APP_NAME__}】为子应用模式（${process.env.VUE_APP_MICRO_SWITCH}），MICRO_APP_ENVIRONMENT=${window.__MICRO_APP_ENVIRONMENT__}`)
+  } else if (process.env.VUE_APP_MICRO_SWITCH === 'BASE') {
+    if (window.__MICRO_APP_ENVIRONMENT__) {
+      console.info(`【${window.__MICRO_APP_NAME__}】基座应用被子应用加载`)
+    }
     const microAppImporter = () => import('@micro-zoe/micro-app')
     const lifeCyclesType: lifeCyclesType = appContext.lifeCyclesType
       ? appContext.lifeCyclesType
@@ -27,24 +52,20 @@ export default (appContext: BaseAppContext<any>) => {
           },
         }
     microAppImporter().then(microApp => {
-      console.log('Randy', process.env.VUE_APP_MICRO_SWITCH)
-      microApp.default.start({ lifeCycles: { ...lifeCyclesType } })
+      if (appContext.lifeCyclesType) {
+        microApp.default.start({ lifeCycles: { ...lifeCyclesType } })
+      } else {
+        microApp.default.start()
+      }
     })
-    appContext.mount ? appContext.mount(appContext) : console.error('基座应用缺少mount函数设置')
-    console.debug(`应用为基座模式（BASE），VUE_APP_MICRO_SWITCH = ${process.env.VUE_APP_MICRO_SWITCH}`)
-  } else if (process.env.VUE_APP_MICRO_SWITCH === 'CHILD') {
-    console.debug(`应用为子应用模式（CHILD），VUE_APP_MICRO_SWITCH = ${process.env.VUE_APP_MICRO_SWITCH}`)
+    renderNow(appContext)
+    console.debug(`【${window.__MICRO_APP_NAME__}】为基座模式（${process.env.VUE_APP_MICRO_SWITCH}），MICRO_APP_ENVIRONMENT=${window.__MICRO_APP_ENVIRONMENT__}`)
   } else {
-    console.debug(`应用为独立运行模式，VUE_APP_MICRO_SWITCH = ${process.env.VUE_APP_MICRO_SWITCH}`)
+    if (window.__MICRO_APP_ENVIRONMENT__) {
+      throw new Error('正常应用模式，不加载MicroApp库，防止问题')
+    } else {
+      appContext.mount(appContext)
+    }
   }
-
-  // if (window.__MICRO_APP_ENVIRONMENT__) {
-  //   ttt.rebuildUmdSnapshot
-  //   window[`micro-app-${window.__MICRO_APP_NAME__}`] = { mount, unmount }
-  // } else {
-  //   // 非微前端环境直接渲染
-  //   if (mount) {
-  //     mount()
-  //   }
-  // }
 }
+export default microRender

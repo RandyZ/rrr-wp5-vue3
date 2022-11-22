@@ -17,9 +17,9 @@ const appContext: BaseAppContext<LocalAppContext> = {
   mount: (context: BaseAppContext<LocalAppContext>) => {
     context.app.use(router).mount('#app')
   },
-  // unmount: (context: BaseAppContext<LocalAppContext>) => {
-  //   context.app.unmount()
-  //   context.otherVueObject?.history.destroy()
-  // },
+  unmount: (context: BaseAppContext<LocalAppContext>) => {
+    context.app.unmount()
+    context.otherVueObject?.history.destroy()
+  },
 }
 MicroAppSetup(appContext)

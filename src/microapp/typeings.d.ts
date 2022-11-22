@@ -6,6 +6,6 @@ interface BaseAppContext<T> {
   app: App<any>
   otherVueObject?: T
   lifeCyclesType?: lifeCyclesType
-  mount?: (app: BaseAppContext<T>) => void
+  mount: (context: BaseAppContext<T>) => void
   unmount?: (context: BaseAppContext<T>) => void
 }
