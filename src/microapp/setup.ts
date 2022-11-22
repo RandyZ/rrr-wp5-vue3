@@ -62,7 +62,7 @@ const microRender = (appContext: BaseAppContext<any>) => {
     console.debug(`【${window.__MICRO_APP_NAME__}】为基座模式（${process.env.VUE_APP_MICRO_SWITCH}），MICRO_APP_ENVIRONMENT=${window.__MICRO_APP_ENVIRONMENT__}`)
   } else {
     if (window.__MICRO_APP_ENVIRONMENT__) {
-      throw new Error('正常应用模式，不加载MicroApp库，防止问题')
+      throw new Error(`正常应用模式，不加载MicroApp库，检查VUE_APP_MICRO_SWITCH=${process.env.VUE_APP_MICRO_SWITCH}`)
     } else {
       appContext.mount(appContext)
     }
