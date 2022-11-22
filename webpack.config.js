@@ -20,7 +20,6 @@ const ESLintPlugin = require('eslint-webpack-plugin')
 // ----------------------------------------------参数变量-------------------------------------------------
 const NodeEnv = process.env.NODE_ENV
 const DevMode = NodeEnv !== 'production'
-console.info('Randy ENV', process.env.NODE_ENV, 'mode', DevMode)
 module.exports = {
   mode: 'development',
   entry: './src/main.ts',
