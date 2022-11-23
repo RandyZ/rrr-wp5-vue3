@@ -12,7 +12,7 @@
     "build:test": "cross-env NODE_ENV=test webpack --progress --config ./webpack.config.js",
     "check-types": "tsc --watch"
   },
-  "author": "",
+  "author": "Randy(261203903@qq.com)",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.20.2",
