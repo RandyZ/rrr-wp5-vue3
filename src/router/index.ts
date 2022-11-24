@@ -17,7 +17,7 @@ const routerContext: RouterContext = RouterConfigure([
     component: () => import('@/pages/AboutView.vue'),
   },
   {
-    path: '/randy/:page*',
+    path: '/vue3/:page*',
     name: 'ChildVue3',
     component: () => import('@/components/MicroAppContainer.vue'),
   },

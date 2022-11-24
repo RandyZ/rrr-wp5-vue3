@@ -3,7 +3,7 @@ import type { Router } from 'vue-router'
 import type { lifeCyclesType } from '@micro-app/types'
 
 interface BaseAppContext<T> {
-  app: App<any>
+  app?: App<any>
   otherVueObject?: T
   lifeCyclesType?: lifeCyclesType
   mount: (context: BaseAppContext<T>) => void
