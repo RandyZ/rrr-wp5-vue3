@@ -1,23 +1,16 @@
-import { createApp } from 'vue'
-import { router, history } from '@/router'
 import rootVue from '@/App.vue'
-import type { BaseAppContext } from './microapp/typeings'
-
 import MicroAppSetup from '@/microapp/setup'
-import type { Router, RouterHistory } from 'vue-router'
+import type { BaseAppContext, RouterContext } from '@/microapp/typeings'
+import AppRouter from '@/router'
+import { createApp } from 'vue'
 
-interface LocalAppContext {
-  router: Router
-  history: RouterHistory
-}
-
-const appContext: BaseAppContext<LocalAppContext> = {
+const appContext: BaseAppContext<RouterContext> = {
   app: createApp(rootVue),
-  otherVueObject: { router, history },
-  mount: (context: BaseAppContext<LocalAppContext>) => {
-    context.app.use(router).mount('#app')
+  otherVueObject: AppRouter,
+  mount: (context: BaseAppContext<RouterContext>) => {
+    context.app.use(AppRouter.router).mount('#app')
   },
-  unmount: (context: BaseAppContext<LocalAppContext>) => {
+  unmount: (context: BaseAppContext<RouterContext>) => {
     context.app.unmount()
     context.otherVueObject?.history.destroy()
   },

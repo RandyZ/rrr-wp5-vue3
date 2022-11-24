@@ -3,12 +3,11 @@
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
+      <HelloWorld msg="微前端模版" />
       <nav>
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/vue3">Vue3</RouterLink>
+        <RouterLink to="/about">ant-design-vue</RouterLink>
+        <RouterLink to="/randy">Vue3</RouterLink>
         <Button>Ant-Design-Button</Button>
       </nav>
     </div>

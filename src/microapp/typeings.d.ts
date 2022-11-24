@@ -9,3 +9,8 @@ interface BaseAppContext<T> {
   mount: (context: BaseAppContext<T>) => void
   unmount?: (context: BaseAppContext<T>) => void
 }
+
+interface RouterContext {
+  router: Router
+  history: RouterHistory
+}
