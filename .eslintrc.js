@@ -19,6 +19,7 @@ module.exports = {
     // 关闭对所有未定义变量的警告提示
     'no-undef': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'vue/no-multiple-template-root': 'off',
+    'vue/no-v-model-argument': 'off',
     // 对于requires引入 关闭
     '@typescript-eslint/no-var-requires': 'off',
     '@typescript-eslint/no-explicit-any': ['off'],
@@ -35,6 +36,6 @@ module.exports = {
     'no-empty': 2, // 不允许空的块语句
     'no-func-assign': 2, // 不允许为一个函数赋值。
     'prettier/prettier': 'off',
-    'space-before-function-paren': 'off'
+    'space-before-function-paren': 'off',
   },
 }
