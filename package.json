@@ -1,7 +1,7 @@
 {
   "name": "randy-wp5-vue3",
   "version": "1.0.0",
-  "description": "",
+  "description": "应用描述信息",
   "main": "main.ts",
   "scripts": {
     "clean": "rimraf ./dist && mkdir dist",
@@ -57,10 +57,13 @@
     "postcss-loader": "^7.0.1",
     "prettier": "^2.7.1",
     "progress-bar-webpack-plugin": "^2.1.0",
+    "rimraf": "^3.0.2",
     "style-loader": "^3.3.1",
     "thread-loader": "^3.0.4",
     "ts-loader": "^9.4.1",
     "typescript": "^4.8.4",
+    "unplugin-auto-import": "^0.11.5",
+    "unplugin-vue-components": "^0.22.11",
     "vue-loader": "^17.0.1",
     "webpack": "^5.75.0",
     "webpack-cli": "^4.10.0",
@@ -68,6 +71,7 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "@ant-design/icons-vue": "^6.1.0",
     "@babel/runtime": "^7.20.1",
     "@babel/runtime-corejs3": "^7.20.1",
     "@micro-zoe/micro-app": "^0.8.10",
