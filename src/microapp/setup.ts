@@ -1,3 +1,4 @@
+import './public-path.js'
 import type { BaseAppContext } from './typeings'
 import type { lifeCyclesType } from '@micro-app/types'
 
@@ -8,12 +9,14 @@ import type { lifeCyclesType } from '@micro-app/types'
 const renderNow = (appContext: BaseAppContext<any>) => {
   // 子应用模式
   if (window.__MICRO_APP_ENVIRONMENT__) {
+    console.log('Child App render in micro app environment')
     // 微前端模式等待基座应用渲染
     window[`micro-app-${window.__MICRO_APP_NAME__}` as any] = {
-      mount: appContext.mount,
-      unmount: appContext.unmount,
+      mount: () => appContext.mount(appContext),
+      unmount: () => appContext.unmount?.(appContext),
     } as any
   } else {
+    console.log('Child App render in normal')
     // 非微前端环境直接渲染
     appContext.mount(appContext)
   }

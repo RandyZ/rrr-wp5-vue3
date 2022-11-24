@@ -6,7 +6,7 @@
       url(必传)：应用地址，会被自动补全为http://localhost:3000/index.html
       baseroute(可选)：基座应用分配给子应用的基础路由，就是上面的 `/my-page`
      -->
-    <micro-app name='vue3' url='https://zeroing.jd.com/micro-app/vue3' :data='data' baseRoute='/vue3'>
+    <micro-app name='vue3' url='http://localhost:9001/micro-app/vue3' :data='data' baseRoute='/vue3'>
       <!-- destroy inline scopecss='false' -->
     </micro-app>
   </div>
