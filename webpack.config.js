@@ -16,7 +16,10 @@ const { DefinePlugin } = require('webpack')
 
 const ESLintPlugin = require('eslint-webpack-plugin')
 
-// -----------------------------------------------可选项-------------------------------------------------
+// const AutoImport = require('unplugin-auto-import/webpack')
+const { AntDesignVueResolver } = require('unplugin-vue-components/resolvers')
+const VueCompnent = require('unplugin-vue-components/webpack')
+
 // ----------------------------------------------参数变量-------------------------------------------------
 const NodeEnv = process.env.NODE_ENV
 const DevMode = NodeEnv !== 'production'
@@ -139,14 +142,16 @@ module.exports = {
       // Vue编译
       {
         test: /.vue$/,
-        use: ['vue-loader'],
-        tap: options => {
-          options.compilerOptions = {
-            ...(options.compilerOptions || {}),
-            isCustomElement: tag => /^micro-app/.test(tag),
-          }
-          return options
-        },
+        use: [
+          {
+            loader: 'vue-loader',
+            options: {
+              compilerOptions: {
+                isCustomElement: tag => /^micro-app/.test(tag),
+              },
+            },
+          },
+        ],
       },
       // 1. ts编译支持；2. js兼容支持
       {
@@ -183,6 +188,16 @@ module.exports = {
       fix: true /* 自动帮助修复 */,
       extensions: ['js', 'json', 'coffee', 'vue'],
       exclude: 'node_modules',
+    }),
+    // 加入之后导致Typescript属性出错
+    // AutoImport({
+    //   imports: ['vue', 'vue-router'],
+    //   dts: 'src/autoconf/auto-import.d.ts',
+    //   resolvers: [AntDesignVueResolver()],
+    // }),
+    VueCompnent({
+      dts: 'src/autoconf/components.d.ts',
+      resolvers: [AntDesignVueResolver({ importStyle: true, resolveIcons: true })],
     }),
   ],
 }

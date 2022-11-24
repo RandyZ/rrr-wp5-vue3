@@ -24,8 +24,6 @@ const routerContext: RouterContext = RouterConfigure([
 ])
 
 routerContext.router.beforeEach((to, from, next) => {
-  console.log('Router', to, from)
-  // 如果没有登录，到login
   next()
 })
 export default routerContext

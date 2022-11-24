@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header v-if="!isInMicroApp">
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
@@ -7,8 +7,7 @@
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">ant-design-vue</RouterLink>
-        <RouterLink to="/vue3/">Vue3</RouterLink>
-        <Button>Ant-Design-Button</Button>
+        <RouterLink to="/vue3">Vue3</RouterLink>
       </nav>
     </div>
   </header>
@@ -18,8 +17,10 @@
 
 <script setup lang="ts">
 import HelloWorld from '@/components/HelloWorld.vue'
-import { Button } from 'ant-design-vue'
+import { ref } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
+const isInMicroApp = ref(window.__MICRO_APP_ENVIRONMENT__)
+
 </script>
 <style lang="less" scoped>
 @media (min-width: 1024px) {

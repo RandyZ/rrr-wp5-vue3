@@ -1,5 +1,13 @@
 {
-    "presets": [
-        "@babel/preset-env"
+  "presets": ["@babel/preset-env"],
+  "plugins": [
+    [
+      "import",
+      {
+        "libraryName": "ant-design-vue",
+        "libraryDirectory": "lib", // default: lib
+        "style": true
+      }
     ]
+  ]
 }

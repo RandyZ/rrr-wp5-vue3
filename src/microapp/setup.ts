@@ -42,25 +42,7 @@ const microRender = (appContext: BaseAppContext<any>, rootVue: DefineComponent<{
       console.info(`【${window.__MICRO_APP_NAME__}】基座应用被子应用加载`)
     }
     const microAppImporter = () => import('@micro-zoe/micro-app')
-    const lifeCyclesType: lifeCyclesType = appContext.lifeCyclesType
-      ? appContext.lifeCyclesType
-      : {
-          created() {
-            console.log('created 全局监听')
-          },
-          beforemount() {
-            console.log('beforemount 全局监听')
-          },
-          mounted() {
-            console.log('mounted 全局监听')
-          },
-          unmount() {
-            console.log('unmount 全局监听')
-          },
-          error() {
-            console.log('error 全局监听')
-          },
-        }
+    const lifeCyclesType: lifeCyclesType = appContext.lifeCyclesType ? appContext.lifeCyclesType : {}
     microAppImporter().then(microApp => {
       if (appContext.lifeCyclesType) {
         microApp.default.start({ lifeCycles: { ...lifeCyclesType } })
