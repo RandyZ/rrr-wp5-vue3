@@ -9,7 +9,7 @@ const buildRouteHistory: () => RouterHistory = () => {
   console.log('App Router Of ' + process.env.VUE_APP_MICRO_SWITCH, process.env.BASE_URL, window.__MICRO_APP_ENVIRONMENT__, window.__MICRO_APP_PUBLIC_PATH__)
   if (window.__MICRO_APP_ENVIRONMENT__ && process.env.VUE_APP_MICRO_SWITCH === 'CHILD') {
     console.log('Router init for micro app')
-    return createWebHistory(window.__MICRO_APP_PUBLIC_PATH__)
+    return createWebHistory(window.__MICRO_APP_PUBLIC_PATH__ || process.env.BASE_URL)
   } else {
     console.log('Router init normal')
     return createWebHistory(process.env.BASE_URL)

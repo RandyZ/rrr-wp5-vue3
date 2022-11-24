@@ -140,6 +140,13 @@ module.exports = {
       {
         test: /.vue$/,
         use: ['vue-loader'],
+        tap: options => {
+          options.compilerOptions = {
+            ...(options.compilerOptions || {}),
+            isCustomElement: tag => /^micro-app/.test(tag),
+          }
+          return options
+        },
       },
       // 1. ts编译支持；2. js兼容支持
       {

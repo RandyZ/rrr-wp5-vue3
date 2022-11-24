@@ -7,7 +7,7 @@
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">ant-design-vue</RouterLink>
-        <RouterLink to="/randy">Vue3</RouterLink>
+        <RouterLink to="/vue3/">Vue3</RouterLink>
         <Button>Ant-Design-Button</Button>
       </nav>
     </div>
@@ -33,6 +33,7 @@ import { RouterLink, RouterView } from 'vue-router'
     }
   }
 }
+
 header {
   line-height: 1.5;
   max-height: 100vh;
