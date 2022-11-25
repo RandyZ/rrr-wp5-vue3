@@ -40,7 +40,7 @@ export default defineComponent({
       visible.value = true;
     }
 
-    const handleOk = e => {
+    const handleOk:(e:Event) => void = e => {
       console.log(e)
       visible.value = false
     }
