@@ -4749,6 +4749,11 @@ minimist@^1.2.0, minimist@^1.2.6:
   resolved "https://nexus.wmqhealth.com/repository/npm-proxy/minimist/-/minimist-1.2.7.tgz"
   integrity sha512-bzfL1YUZsP41gmu/qjrEk0Q6i2ix/cVeAhbCbqH9u3zYutS1cLg00qhrD0M2MVdCcx4Sc0UpP2eBWo9rotpq6g==
 
+mitt@^3.0.0:
+  version "3.0.0"
+  resolved "https://nexus.wmqhealth.com/repository/npm-proxy/mitt/-/mitt-3.0.0.tgz#69ef9bd5c80ff6f57473e8d89326d01c414be0bd"
+  integrity sha512-7dX2/10ITVyqh4aOSVI9gdape+t9l2/8QxHrFmUXu4EEUpdlxl6RudZUPZoc+zuY2hk1j7XxVroIVIan/pD/SQ==
+
 mkdirp@^0.5.1:
   version "0.5.6"
   resolved "https://nexus.wmqhealth.com/repository/npm-proxy/mkdirp/-/mkdirp-0.5.6.tgz"
@@ -6179,6 +6184,11 @@ ts-loader@^9.4.1:
     enhanced-resolve "^5.0.0"
     micromatch "^4.0.0"
     semver "^7.3.4"
+
+ts-md5@^1.3.1:
+  version "1.3.1"
+  resolved "https://nexus.wmqhealth.com/repository/npm-proxy/ts-md5/-/ts-md5-1.3.1.tgz#f5b860c0d5241dd9bb4e909dd73991166403f511"
+  integrity sha512-DiwiXfwvcTeZ5wCE0z+2A9EseZsztaiZtGrtSaY5JOD7ekPnR/GoIVD5gXZAlK9Na9Kvpo9Waz5rW64WKAWApg==
 
 tsconfig-paths@^3.14.1:
   version "3.14.1"

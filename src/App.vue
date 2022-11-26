@@ -20,7 +20,6 @@ import HelloWorld from '@/components/HelloWorld.vue'
 import { ref } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 const isInMicroApp = ref(window.__MICRO_APP_ENVIRONMENT__)
-
 </script>
 <style lang="less" scoped>
 @media (min-width: 1024px) {

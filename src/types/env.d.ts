@@ -1,4 +1,3 @@
-/// <reference path="../" />
 /// <reference path="./" />
 declare interface Window {
   /**
@@ -23,4 +22,8 @@ declare interface Window {
    * 子应用的基础路由
    */
   __MICRO_APP_BASE_ROUTE__: string
+  /**
+   * 微应用实例
+   */
+  microApp?: object
 }

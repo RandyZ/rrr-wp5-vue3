@@ -1,7 +1,13 @@
 import './public-path.js'
 import { createApp, type DefineComponent } from 'vue'
-import type { BaseAppContext } from './typeings'
+import type { BaseAppContext, EventBus, WmqEvents } from './typeings'
 import type { lifeCyclesType } from '@micro-app/types'
+import mitt from 'mitt'
+
+/**
+ * 创建事件总线实例
+ */
+const eventBus: EventBus = mitt<WmqEvents>() as EventBus
 
 /**
  * 执行渲染
@@ -16,6 +22,7 @@ const renderNow = (appContext: BaseAppContext<any>, rootVue: DefineComponent<{},
     window[`micro-app-${window.__MICRO_APP_NAME__}` as any] = {
       mount: () => {
         appContext.app = createApp(rootVue)
+        appContext.app.config.globalProperties.$Bus = eventBus
         appContext.mount(appContext)
       },
       unmount: () => appContext.unmount?.(appContext),
@@ -24,6 +31,7 @@ const renderNow = (appContext: BaseAppContext<any>, rootVue: DefineComponent<{},
     console.log('Child App render in normal')
     // 非微前端环境直接渲染
     appContext.app = createApp(rootVue)
+    appContext.app.config.globalProperties.$Bus = eventBus
     appContext.mount(appContext)
   }
 }

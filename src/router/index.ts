@@ -1,5 +1,5 @@
 import RouterConfigure from '@/microapp/router-conf'
-import type { RouterContext } from '@/microapp/typeings'
+import type { RouterContext, RouteMetaData } from '@/microapp/typeings'
 import HomeView from '@/pages/HomeView.vue'
 
 const routerContext: RouterContext = RouterConfigure([
@@ -21,8 +21,11 @@ const routerContext: RouterContext = RouterConfigure([
     name: 'ChildVue3',
     component: () => import('@/microapp/MicroAppContainer.vue'),
     meta: {
-      
-    }
+      microapp: {
+        location: 'http://localhost:9001/micro-app/vue3',
+        active: '/vue3',
+      } as RouteMetaData,
+    },
   },
 ])
 
