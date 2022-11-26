@@ -19,7 +19,10 @@ const routerContext: RouterContext = RouterConfigure([
   {
     path: '/vue3/:page*',
     name: 'ChildVue3',
-    component: () => import('@/components/MicroAppContainer.vue'),
+    component: () => import('@/microapp/MicroAppContainer.vue'),
+    meta: {
+      
+    }
   },
 ])
 
