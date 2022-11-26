@@ -7,7 +7,7 @@
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">ant-design-vue</RouterLink>
-        <RouterLink to="/vue3">Vue3</RouterLink>
+        <RouterLink to="/vue3/about">Vue3</RouterLink>
       </nav>
     </div>
   </header>

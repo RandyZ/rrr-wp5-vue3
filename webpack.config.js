@@ -23,6 +23,9 @@ const VueCompnent = require('unplugin-vue-components/webpack')
 // ----------------------------------------------参数变量-------------------------------------------------
 const NodeEnv = process.env.NODE_ENV
 const DevMode = NodeEnv !== 'production'
+const EnvObject = require('./env').loadEnv(NodeEnv)
+// eslint-disable-next-line no-eval
+const publicPath = eval(EnvObject.BASE_URL)
 module.exports = {
   mode: 'development',
   entry: './src/main.ts',
@@ -42,7 +45,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
+    publicPath,
     filename: '[name].[contenthash].js',
     clean: true,
     chunkLoadingGlobal: `wmqJsonp_${pkgInfo.name}`,
@@ -178,7 +181,7 @@ module.exports = {
     }),
     new VueLoaderPlugin(),
     new DefinePlugin({
-      'process.env': { ...require('./env').loadEnv(NodeEnv) },
+      'process.env': { ...EnvObject },
       // 是否支持OptionApi
       __VUE_OPTIONS_API__: JSON.stringify(true),
       // 正式环境是否支持DEVTOOLS
